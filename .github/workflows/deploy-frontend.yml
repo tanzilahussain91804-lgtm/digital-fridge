@@ -1,3 +1,4 @@
+
 name: Deploy Frontend to GitHub Pages
 
 on:
@@ -31,6 +32,8 @@ jobs:
 
       - name: Build frontend
         working-directory: frontend
+        env:
+          VITE_API_URL: https://digital-fridge-1msd.onrender.com/api
         run: npm run build
 
       - name: Setup Pages
@@ -44,3 +47,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
